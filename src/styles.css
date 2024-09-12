@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+  
+.app {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+  
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+  
+.search-bar {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    margin: 0 auto 20px;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+  
+.search-bar:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+  
+.player-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+  
+.player-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: left;
+}
+  
+.player-card h2 {
+    margin-top: 0;
+}
+  
+.player-card p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+  
+.player-card p strong {
+    font-weight: bold;
+    color: #3498db;
+}
+  
+@media (max-width: 768px) {
+    .app {
+        padding: 10px;
+    }
+  
+    .search-bar {
+        width: 90%;
+    }
+}
+  
+.filter {
+    margin: 10px 0;
+}
+  
+.filter label {
+    margin-right: 10px;
+}
+  
+.filter select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+  
+.team-builder {
+    padding: 20px;
+}
+  
+.available-players, .selected-players {
+    margin-bottom: 20px;
+}
+  
+.player-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+  
+.player-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+  
+.player-item button:hover {
+    background-color: #0056b3;
+}
+  
+nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+  
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+  
+nav a:hover {
+    text-decoration: underline;
+}
+  
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+.pagination button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.pagination button.active {
+    background-color: #45a049;
+}
+  
+.pagination button:hover {
+    background-color: #45a049;
+}

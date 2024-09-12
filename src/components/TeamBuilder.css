@@ -1,0 +1,72 @@
+.team-builder {
+    text-align: center;
+    padding: 20px;
+}
+  
+.filter {
+    margin-bottom: 10px;
+}
+  
+.player-search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.football-field {
+    width: 600px;
+    height: 900px;
+    position: relative;
+    background-color: #228B22;
+    margin: 0 auto;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  
+.team-slot {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+  
+.player-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+  
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+button:hover {
+    background-color: #45a049;
+}
+  
+.slot-1 { top: 5%; left: 50%; transform: translateX(-50%); }
+.slot-2 { top: 15%; left: 7%; }
+.slot-3 { top: 15%; left: 72%; }
+.slot-4 { top: 37%; left: 67%; }
+.slot-5 { top: 37%; left: 40%; }
+.slot-6 { top: 37%; left: 13%; }
+.slot-7 { top: 60%; left: 15%; transform: translateX(-50%); }
+.slot-8 { top: 60%; left: 28%; }
+.slot-9 { top: 60%; left: 52%; }
+.slot-10 { top: 60%; left: 85%; transform: translateX(-50%); }
+.slot-11 { top: 80%; left: 40%; }
