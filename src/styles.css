@@ -1,17 +1,22 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(to top, #09203f 0%, #537895 100%);
     margin: 0;
     padding: 0;
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  
+    background-size: cover; 
     color: #333;
+    height: auto;
+    width: auto;
 }
   
 .app {
     text-align: center;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     max-width: 800px;
     margin: 20px auto;
 }
@@ -19,6 +24,7 @@ body {
 h1 {
     color: #2c3e50;
     margin-bottom: 20px;
+    font-size: 3.3rem;
 }
   
 .search-bar {
@@ -26,45 +32,18 @@ h1 {
     max-width: 500px;
     padding: 12px;
     margin: 0 auto 20px;
-    border: 2px solid #3498db;
+    border: 2px solid #000000;
+    
     border-radius: 6px;
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
   
 .search-bar:focus {
-    border-color: #2980b9;
+    border-color: #ffffff;
     outline: none;
 }
-  
-.player-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-  
-.player-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 300px;
-    text-align: left;
-}
-  
-.player-card h2 {
-    margin-top: 0;
-}
-  
-.player-card p {
-    margin: 8px 0;
-    font-size: 16px;
-}
-  
-.player-card p strong {
-    font-weight: bold;
-    color: #3498db;
-}
+
   
 @media (max-width: 768px) {
     .app {
@@ -87,7 +66,7 @@ h1 {
 .filter select {
     padding: 5px;
     border-radius: 4px;
-    border: 1px solid #ddd;
+
 }
   
 .team-builder {
@@ -142,7 +121,7 @@ nav a:hover {
 }
   
 .pagination button {
-    background-color: #4CAF50;
+    background-color: #001279;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -153,9 +132,9 @@ nav a:hover {
 }
   
 .pagination button.active {
-    background-color: #45a049;
+    background-color: #001279;
 }
   
 .pagination button:hover {
-    background-color: #45a049;
+    background-color: #001279;
 }
