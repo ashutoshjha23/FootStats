@@ -12,7 +12,7 @@
   }
   
   .modal-content {
-    background: white;
+    background-image: linear-gradient(to left, #d7d2cc 0%, #304352 100%);
     border-radius: 8px;
     padding: 20px;
     width: 80%;
@@ -45,7 +45,8 @@
   }
   
   .modal-body p {
+    color: black;
+    font-weight: 700;
     margin: 0;
     font-size: 14px;
   }
-  
