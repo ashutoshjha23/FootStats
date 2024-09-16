@@ -5,7 +5,7 @@ import PlayerCard from './components/PlayerCard';
 import PositionFilter from './components/PositionFilter';
 import LeagueFilter from './components/LeagueFilter';
 import TeamBuilder from './components/TeamBuilder';
-import GoalsBarChart from './components/GoalsBarChart'; // Import the new component
+import GoalsBarChart from './components/GoalsBarChart'; 
 import playersData from './data/players.json';
 import './styles.css';
 
