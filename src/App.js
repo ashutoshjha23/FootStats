@@ -5,7 +5,8 @@ import PlayerCard from './components/PlayerCard';
 import PositionFilter from './components/PositionFilter';
 import LeagueFilter from './components/LeagueFilter';
 import TeamBuilder from './components/TeamBuilder';
-import GoalsBarChart from './components/GoalsBarChart'; // Import the new component
+import GoalsBarChart from './components/GoalsBarChart';
+import WelcomeScreen from './components/WelcomeScreen';
 import playersData from './data/players.json';
 import './styles.css';
 
@@ -16,6 +17,7 @@ const App = () => {
   const [selectedPosition, setSelectedPosition] = useState('All');
   const [selectedLeague, setSelectedLeague] = useState('All');
   const [currentPage, setCurrentPage] = useState(1);
+  const [showWelcome, setShowWelcome] = useState(true);
   const playersPerPage = 10;
   const paginationRange = 10;
 
@@ -29,17 +31,17 @@ const App = () => {
 
   const handleSearch = (query) => {
     setSearchQuery(query);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const handlePositionChange = (position) => {
     setSelectedPosition(position);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const handleLeagueChange = (league) => {
     setSelectedLeague(league);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const filterPlayers = (query, position, league) => {
@@ -62,55 +64,65 @@ const App = () => {
     setCurrentPage(pageNumber);
   };
 
+  const handleWelcomeScreen = () => {
+    setShowWelcome(false);
+  };
+
   return (
     <Router>
-      <div className="app">
-        <header>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/build-team">Build Your Team</Link>
-            <Link to="/top-goals">Top Scorers</Link> 
-          </nav>
-        </header>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <h1>Football Player Stats</h1>
-                <SearchBar onSearch={handleSearch} />
-                <PositionFilter onPositionChange={handlePositionChange} />
-                <LeagueFilter players={players} onLeagueChange={handleLeagueChange} />
-                {searchQuery && (
-                  <div className="player-cards">
-                    {currentPlayers.length > 0 ? (
-                      currentPlayers.map((player) => (
-                        <PlayerCard key={player.Rk} player={player} />
-                      ))
-                    ) : (
-                      <p>No players found</p>
+      <div className={`app ${!showWelcome ? 'slide-up' : ''}`}>
+        {showWelcome ? (
+          <WelcomeScreen onStart={handleWelcomeScreen} />
+        ) : (
+          <>
+            <header>
+              <nav>
+                <Link to="/">Stats</Link>
+                <Link to="/build-team">Build Your Team</Link>
+                <Link to="/top-goals">Top Scorers</Link>
+              </nav>
+            </header>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <h1>Player Stats</h1>
+                    <SearchBar onSearch={handleSearch} />
+                    <PositionFilter onPositionChange={handlePositionChange} />
+                    <LeagueFilter players={players} onLeagueChange={handleLeagueChange} />
+                    {searchQuery && (
+                      <div className="player-cards">
+                        {currentPlayers.length > 0 ? (
+                          currentPlayers.map((player) => (
+                            <PlayerCard key={player.Rk} player={player} />
+                          ))
+                        ) : (
+                          <p>No players found</p>
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
-                {searchQuery && (
-                  <div className="pagination">
-                    {Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index).map((pageNumber) => (
-                      <button
-                        key={pageNumber}
-                        onClick={() => handlePageChange(pageNumber)}
-                        className={currentPage === pageNumber ? 'active' : ''}
-                      >
-                        {pageNumber}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </>
-            }
-          />
-          <Route path="/build-team" element={<TeamBuilder players={players} />} />
-          <Route path="/top-goals" element={<GoalsBarChart players={players} />} /> {/* Add the new route */}
-        </Routes>
+                    {searchQuery && (
+                      <div className="pagination">
+                        {Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index).map((pageNumber) => (
+                          <button
+                            key={pageNumber}
+                            onClick={() => handlePageChange(pageNumber)}
+                            className={currentPage === pageNumber ? 'active' : ''}
+                          >
+                            {pageNumber}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                }
+              />
+              <Route path="/build-team" element={<TeamBuilder players={players} />} />
+              <Route path="/top-goals" element={<GoalsBarChart players={players} />} />
+            </Routes>
+          </>
+        )}
       </div>
     </Router>
   );
