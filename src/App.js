@@ -5,12 +5,8 @@ import PlayerCard from './components/PlayerCard';
 import PositionFilter from './components/PositionFilter';
 import LeagueFilter from './components/LeagueFilter';
 import TeamBuilder from './components/TeamBuilder';
-<<<<<<< HEAD
 import GoalsBarChart from './components/GoalsBarChart';
 import WelcomeScreen from './components/WelcomeScreen';
-=======
-import GoalsBarChart from './components/GoalsBarChart'; 
->>>>>>> 95346788eed5122796d15dcd8177ccd976b55db2
 import playersData from './data/players.json';
 import './styles.css';
 
