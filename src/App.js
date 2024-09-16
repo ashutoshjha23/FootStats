@@ -5,6 +5,7 @@ import PlayerCard from './components/PlayerCard';
 import PositionFilter from './components/PositionFilter';
 import LeagueFilter from './components/LeagueFilter';
 import TeamBuilder from './components/TeamBuilder';
+import GoalsBarChart from './components/GoalsBarChart'; // Import the new component
 import playersData from './data/players.json';
 import './styles.css';
 
@@ -50,6 +51,7 @@ const App = () => {
     });
     setSelectedPlayers(filteredPlayers);
   };
+
   const indexOfLastPlayer = currentPage * playersPerPage;
   const indexOfFirstPlayer = indexOfLastPlayer - playersPerPage;
   const currentPlayers = selectedPlayers.slice(indexOfFirstPlayer, indexOfLastPlayer);
@@ -59,6 +61,7 @@ const App = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
   return (
     <Router>
       <div className="app">
@@ -66,6 +69,7 @@ const App = () => {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/build-team">Build Your Team</Link>
+            <Link to="/top-goals">Top Scorers</Link> 
           </nav>
         </header>
         <Routes>
@@ -105,6 +109,7 @@ const App = () => {
             }
           />
           <Route path="/build-team" element={<TeamBuilder players={players} />} />
+          <Route path="/top-goals" element={<GoalsBarChart players={players} />} /> {/* Add the new route */}
         </Routes>
       </div>
     </Router>
