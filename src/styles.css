@@ -96,23 +96,7 @@ body {
 .player-item button:hover {
     background-color: #0056b3;
 }
-  
-nav {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-  
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 18px;
-}
-  
-nav a:hover {
-    text-decoration: underline;
-}
+ 
   
 .pagination {
     display: flex;
@@ -154,13 +138,8 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #555;
+    background-color: #16254f;
     color: #fff;
-}
-
-nav a.active {
-    background-color: #4CAF50;
-    color: white;
 }
 
 .filter-container {
