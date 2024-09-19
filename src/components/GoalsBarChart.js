@@ -77,8 +77,8 @@ const GoalsAssistsBarChart = () => {
                 {
                   label: 'Goals',
                   data: dataForSelectedLeague.map((player) => player.Goals),
-                  backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
+                  backgroundColor: 'rgba(255, 0, 0, 0.6)',
+                  borderColor: 'rgba(255, 0, 0, 1)',
                   borderWidth: 1,
                 },
                 {
